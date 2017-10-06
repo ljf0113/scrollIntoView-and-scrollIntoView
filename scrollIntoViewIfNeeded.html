@@ -37,25 +37,35 @@
 			background: lightgreen;
 		}
 
-		.scrollIntoViewIfNeeded {
+		.scrollIntoViewIfNeeded-top {
 			margin-top: 50px;
 			background: lightblue;
+		}
+
+		.scrollIntoViewIfNeeded-bottom {
+			margin-top: 100px;
+			background: lightcyan;
 		}
 	</style>
 </head>
 <body>
 	<div class="chunk"></div>
-	<div class="scrollIntoView">scrollIntoView</div>
-	<div class="scrollIntoViewIfNeeded">scrollIntoViewIfNeeded</div>
+	<div class="scrollIntoView">scrollIntoView top</div>
+	<div class="scrollIntoViewIfNeeded-top">scrollIntoViewIfNeeded top</div>
+	<div class="scrollIntoViewIfNeeded-bottom">scrollIntoViewIfNeeded botom</div>
 	<script>
     const scrollIntoView = document.querySelector('.scrollIntoView');
-    const scrollIntoViewIfNeeded = document.querySelector('.scrollIntoViewIfNeeded');
+    const scrollIntoViewIfNeededTop = document.querySelector('.scrollIntoViewIfNeeded-top');
+    const scrollIntoViewIfNeededBottom = document.querySelector('.scrollIntoViewIfNeeded-bottom');
     const test = document.querySelector('.chunk');
     scrollIntoView.addEventListener('click', function() {
       test.scrollIntoView(true);
     });
-    scrollIntoViewIfNeeded.addEventListener('click', function() {
+    scrollIntoViewIfNeededTop.addEventListener('click', function() {
       test.scrollIntoViewIfNeeded(true);
+    });
+    scrollIntoViewIfNeededBottom.addEventListener('click', function() {
+      test.scrollIntoViewIfNeeded(false);
     });
 	</script>
 </body>
