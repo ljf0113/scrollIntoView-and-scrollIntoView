@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 200vh;
+		}
+
+		.chunk {
+			margin-top: 30vh;
+			height: 20vh;
+			background: lightcoral;
+		}
+
+		.btn {
+			padding: 10px 15px;
+			position: fixed;
+			right: 0;
+			top: 50vh;
+			background: lightgreen;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="chunk"></div>
+	<div class="btn">click</div>
+	<script>
+    const btn = document.querySelector('.btn');
+    const test = document.querySelector('.chunk');
+    btn.addEventListener('click', function() {
+      test.scrollIntoView();
+    })
+	</script>
+</body>
+</html>
