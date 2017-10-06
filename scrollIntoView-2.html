@@ -17,31 +17,46 @@
 		}
 
 		.chunk {
-			margin-top: 30vh;
+			margin-top: 100vh;
 			height: 20vh;
 			background: lightcoral;
 		}
 
-		.btn {
+		div[class^=btn] {
+			width: 50px;
 			padding: 10px 15px;
 			position: fixed;
-			right: 0;
 			top: 50vh;
-			background: lightgreen;
+			right: 0;
 			border-radius: 10px;
 			cursor: pointer;
+			text-align: center;
+		}
+
+		.btn-top {
+			background: lightgreen;
+		}
+
+		.btn-bottom {
+			margin-top: 50px;
+			background: lightcoral;
 		}
 	</style>
 </head>
 <body>
 	<div class="chunk"></div>
-	<div class="btn">click</div>
+	<div class="btn-top">up</div>
+	<div class="btn-bottom">down</div>
 	<script>
-    const btn = document.querySelector('.btn');
+    const up = document.querySelector('.btn-top');
+    const down = document.querySelector('.btn-bottom');
     const test = document.querySelector('.chunk');
-    btn.addEventListener('click', function() {
-      test.scrollIntoView();
-    })
+    up.addEventListener('click', function() {
+      test.scrollIntoView(true);
+    });
+    down.addEventListener('click', function() {
+      test.scrollIntoView(false);
+    });
 	</script>
 </body>
 </html>
